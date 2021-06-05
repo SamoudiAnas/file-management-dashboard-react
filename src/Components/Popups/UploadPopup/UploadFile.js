@@ -6,10 +6,16 @@ import Gif from "../../Icons/gif.svg";
 import Images from "../../Icons/image.svg";
 import Upload from "../../Icons/upload.svg";
 import X from "../../Icons/x.svg";
+
+
+
+
+
+//Styled Components
 export const UploadFileContainer = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 0;
   left: 0;
@@ -24,7 +30,7 @@ export const BoxContainer = styled.div`
   height: 500px;
   background: #fff;
   padding: 1rem 2rem;
-
+   box-shadow : 0px 0px 20px rgba(0,0,0,0.2) ;
   h1 {
     color: #000;
     text-align: start;
@@ -53,6 +59,9 @@ export const FlexContainer2 = styled.div`
       width: 15px;
       margin: 1rem 0;
       margin-bottom: 2rem;
+  }
+  img:hover{
+      cursor: pointer;
   }
   p{
       color: #7e7e7e;
@@ -89,6 +98,7 @@ export const UploadSpace = styled.div`
       color: #DB4C40;
   }
 `;
+
 export const Button = styled.button`
 color: white;
   font-weight: 600;
@@ -96,6 +106,10 @@ color: white;
   padding: 8px 20px;
   border-radius: 2px;
   border: transparent;
+  &:hover{
+      cursor: pointer;
+      background-color: #b44339;
+  }
 `;
 
 export const UploadFile = ({ showPopup, setShowPopup }) => {
@@ -120,12 +134,20 @@ export const UploadFile = ({ showPopup, setShowPopup }) => {
     },
   ];
 
+
+  const closePopup = () =>{
+      setShowPopup(false);
+  };
+
+
+
+
   const Div = (
     <UploadFileContainer>
       <BoxContainer>
         <FlexContainer2>
         <h1>Upload File</h1>
-        <img src={X} />
+        <img src={X}  onClick={closePopup}/>
         </FlexContainer2>
         <FlexContainer>
           {items.map((item) => (
