@@ -1,0 +1,37 @@
+.folder-box{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 150px;
+    height: 220px; 
+    margin: 1.5rem ;
+    box-shadow: 0 0  5px rgba(68, 144, 148, 0.2);
+    overflow:hidden;   
+}
+.folder-box:hover{
+    border: 2px solid #89BD9E; 
+    
+}
+
+.folder-img {
+    width: 100%;
+     max-height: 150px;
+    background-size: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.folder-name{
+    text-align: start;
+    text-overflow: "…";
+    max-width: 100px;
+    font-size: 10px;
+    margin-left: 1em;
+    margin-top:.5em;
+}
+.folder-date{
+    color: #bbb;
+    text-align: start;
+    font-weight: 400;
+    font-size: .5em;
+    margin-left: 1em;
+    margin-top:0.2em;
+}

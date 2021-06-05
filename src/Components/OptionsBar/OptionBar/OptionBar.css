@@ -1,0 +1,10 @@
+.option-bar{
+    width:350px;
+    height: 100vh;
+    background-color: #eee;
+}
+.options{
+    color: #DB4C40;
+    text-align: start;
+    margin: 3rem 3rem 2em 3rem;
+}

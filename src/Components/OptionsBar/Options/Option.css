@@ -1,0 +1,34 @@
+.option-element{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.option-list{
+    display: flex;
+    align-items: center;
+    
+    
+    color:#fff;
+    list-style: none;
+    margin:  1rem 2rem;
+
+}
+.option-list a{
+    color:#3C153B;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.option-icon{
+    width: 18px;
+    height: 18px;
+    margin: 0  15px 0 0;
+}
+
+.option-element:hover{
+    background-color: #DB4C40;
+    cursor: pointer;
+}
+

@@ -1,0 +1,41 @@
+.sidebar{
+    width: 250px;
+    height: 100vh;
+    background:#DB4C40;
+    position: relative;
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.logo-icon{
+    width: 30px;
+    height: 30px;
+    margin: 8px 8px 8px 0;
+}
+
+.logo-name{
+    color: #fff;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.sign-out{
+    margin: 2rem 2rem;
+}
+
+.copyright{
+    position: absolute;
+    left: 30%;
+    bottom: 20px;
+    color: #fff;
+    font-weight: 400;
+}

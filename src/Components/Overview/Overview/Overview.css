@@ -1,0 +1,14 @@
+.overview{
+    width: calc(100% - 600px);
+}
+
+.section-name{
+    text-align: start;
+    margin: 3rem 3rem 0 3rem;
+}
+
+.templates{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}

@@ -1,0 +1,31 @@
+.nav-element{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    color:#fff;
+    list-style: none;
+    margin:  1rem 2rem;
+
+}
+.nav-list a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.nav-icon{
+    width: 18px;
+    height: 18px;
+    margin: 0  15px 0 0;
+}
+
+.nav-element:hover{
+    background-color: #3C153B;
+    cursor: pointer;
+}
+
