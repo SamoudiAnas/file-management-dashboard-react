@@ -1,4 +1,5 @@
 .nav-element{
+    position: relative;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -27,5 +28,22 @@
 .nav-element:hover{
     background-color: #3C153B;
     cursor: pointer;
+}
+
+.count{
+    border-radius: 20px;   
+  border: 2px solid #FFF;
+  width: 20px;
+  height: 20px;  
+  background-color: #8B1E3F;
+  position: absolute;
+  
+  right: 10%;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #FFF;
+  font-weight: 700;
 }
 

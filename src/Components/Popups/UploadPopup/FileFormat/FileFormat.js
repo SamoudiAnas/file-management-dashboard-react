@@ -22,7 +22,7 @@ export const FileName = styled.h3`
   color: #141414;
   text-align: start;
   font-weight: 400;
-  font-size: 0.6em;
+  font-size: 0.7em;
 `;
 export const Formats = styled.h4`
   color: #bbb;

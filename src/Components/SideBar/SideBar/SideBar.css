@@ -28,8 +28,11 @@
     cursor: pointer;
 }
 
-.sign-out{
-    margin: 2rem 2rem;
+.empty-div{
+    margin: 2rem 0 1rem 0;
+    border-bottom: 1px solid #CDD1C4;
+    opacity: .2;
+ 
 }
 
 .copyright{

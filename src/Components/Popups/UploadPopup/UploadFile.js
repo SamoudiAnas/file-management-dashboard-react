@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useCallback, useRef } from "react";
+import { useSpring } from "@react-spring/core";
 import styled from "styled-components";
 import FileFormat from "../UploadPopup/FileFormat/FileFormat";
 import Video from "../../Icons/video.svg";
@@ -6,10 +7,7 @@ import Gif from "../../Icons/gif.svg";
 import Images from "../../Icons/image.svg";
 import Upload from "../../Icons/upload.svg";
 import X from "../../Icons/x.svg";
-
-
-
-
+import { animated } from "@react-spring/web";
 
 //Styled Components
 export const UploadFileContainer = styled.div`
@@ -25,12 +23,11 @@ export const UploadFileContainer = styled.div`
 `;
 
 export const BoxContainer = styled.div`
-  
   width: 700px;
   height: 500px;
   background: #fff;
   padding: 1rem 2rem;
-   box-shadow : 0px 0px 20px rgba(0,0,0,0.2) ;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   h1 {
     color: #000;
     text-align: start;
@@ -49,22 +46,21 @@ export const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 `;
 export const FlexContainer2 = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  img{
-      width: 15px;
-      margin: 1rem 0;
-      margin-bottom: 2rem;
+  img {
+    width: 15px;
+    margin: 1rem 0;
+    margin-bottom: 2rem;
   }
-  img:hover{
-      cursor: pointer;
+  img:hover {
+    cursor: pointer;
   }
-  p{
-      color: #7e7e7e;
+  p {
+    color: #7e7e7e;
   }
 `;
 
@@ -93,22 +89,22 @@ export const UploadSpace = styled.div`
     color: #8b1e3f;
     text-decoration: underline;
   }
-  h5:hover{
-      cursor: pointer;
-      color: #DB4C40;
+  h5:hover {
+    cursor: pointer;
+    color: #db4c40;
   }
 `;
 
 export const Button = styled.button`
-color: white;
+  color: white;
   font-weight: 600;
-  background-color: #DB4C40;
+  background-color: #db4c40;
   padding: 8px 20px;
   border-radius: 2px;
   border: transparent;
-  &:hover{
-      cursor: pointer;
-      background-color: #b44339;
+  &:hover {
+    cursor: pointer;
+    background-color: #b44339;
   }
 `;
 
@@ -124,7 +120,7 @@ export const UploadFile = ({ showPopup, setShowPopup }) => {
       id: "key2",
       icon: Gif,
       name: "GIFs",
-      formats: "800x600or 400x300",
+      formats: "800x600 or 400x300",
     },
     {
       id: "key3",
@@ -134,42 +130,59 @@ export const UploadFile = ({ showPopup, setShowPopup }) => {
     },
   ];
 
-
-  const closePopup = () =>{
-      setShowPopup(false);
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+  const uploadRef = useRef();
+  const closeP = e => {
+    if(uploadRef.current === e.target){
+        closePopup();
+    }
   };
 
+  
+  
+  const animation = useSpring({
+    config: {
+      duration: 250,
+    },
+    opacity: showPopup ? 1 : 0,
+    transform: showPopup ? `translateY(0%) ` : `translate(-100%)`,
+  });
 
 
+  
 
   const Div = (
-    <UploadFileContainer>
-      <BoxContainer>
-        <FlexContainer2>
-        <h1>Upload File</h1>
-        <img src={X}  onClick={closePopup}/>
-        </FlexContainer2>
-        <FlexContainer>
-          {items.map((item) => (
-            <FileFormat
-              name={item.name}
-              formats={item.formats}
-              icon={item.icon}
-            />
-          ))}
-        </FlexContainer>
-        <UploadSpace>
-          <div>
-            <object type="image/svg+xml" data={Upload}></object>
-            <h4>Drag & drop to upload</h4>
-            <h5>or browse</h5>
-          </div>
-        </UploadSpace>
-        <FlexContainer2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nunc.</p>
-          <Button>Upload</Button>
-        </FlexContainer2>
-      </BoxContainer>
+    <UploadFileContainer ref={uploadRef} onClick={closeP}>
+      <animated.div style={animation}>
+        <BoxContainer>
+          <FlexContainer2>
+            <h1>Upload File</h1>
+            <img src={X} onClick={closePopup} />
+          </FlexContainer2>
+          <FlexContainer>
+            {items.map((item) => (
+              <FileFormat
+                name={item.name}
+                formats={item.formats}
+                icon={item.icon}
+              />
+            ))}
+          </FlexContainer>
+          <UploadSpace>
+            <div>
+              <object type="image/svg+xml" data={Upload}></object>
+              <h4>Drag & drop to upload</h4>
+              <h5>or browse</h5>
+            </div>
+          </UploadSpace>
+          <FlexContainer2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nunc.</p>
+            <Button>Upload</Button>
+          </FlexContainer2>
+        </BoxContainer>
+      </animated.div>
     </UploadFileContainer>
   );
 
