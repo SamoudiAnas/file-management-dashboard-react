@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import SideBar from "../SideBar/SideBar/SideBar";
 import SearchBar from "../Overview/TopBar/SearchBar/SearchBar";
-import Email from "./ContentTypes/Email";
-import Dashlet from "./Dashlet";
+
+import EmailDashlet from "./Dashlets/EmailDashlet";
 
 export const FlexContainer = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const DashletContainer = styled.div`
   padding:1.5rem 2rem 1.5rem 2rem;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   
 `;
 
@@ -33,12 +33,12 @@ const MainPage = () => {
         <SearchBar />
         <SectionName>Your dashboard</SectionName>
         <DashletContainer>
-          <Dashlet></Dashlet>
-          <Dashlet></Dashlet>
+          <EmailDashlet></EmailDashlet>
+          <EmailDashlet></EmailDashlet>
         </DashletContainer>
         <DashletContainer>
-          <Dashlet></Dashlet>
-          <Dashlet></Dashlet>
+        <EmailDashlet></EmailDashlet>
+        <EmailDashlet></EmailDashlet>
         </DashletContainer>
       </Container>
     </FlexContainer>

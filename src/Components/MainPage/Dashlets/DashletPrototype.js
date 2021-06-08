@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Email from "./ContentTypes/Email";
+
 
 export const DashletName = styled.div`
     color: #fff;
@@ -25,19 +25,31 @@ export const Container = styled.div`
     margin: 0 1rem;
    
 `;
-const Dashlet =()=>{
+export const ViewMore = styled.h4`
+    color: #2191FB;
+    text-decoration: underline;
+    font-weight: 400;
+    text-align: end;
+    padding-top:5px;
+    padding-right: 2rem;
+    &:hover{
+        cursor: pointer;
+    }
+`;
+const DashletPrototype =()=>{
+
+
     return(<Container>
         <DashletName>Test</DashletName>
         <DashletContainer>
             <DashletContent>
-            <Email></Email>
-            <Email></Email>
-            <Email></Email>
-            <Email></Email>
+            
+            <ViewMore>View More {'>'}</ViewMore>
+
             </DashletContent>
         </DashletContainer>
         </Container>
     );
 };
 
-export default Dashlet;
+export default DashletPrototype;
